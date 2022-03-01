@@ -1,0 +1,74 @@
+::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #1C743A;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #1C743A;
+}
+
+* {
+  font-family: 'Mulish', sans-serif;
+}
+
+.header-component{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.header-component span {
+  font-size: 20px;
+}
+
+.information-cards{
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-card{
+  width: 250px;
+  max-width: 295px;
+  height: 130px;
+  border-radius: 20px;
+}
+
+mat-card-content{
+  margin-top: 2em;
+}
+
+.card-orders{
+  background: rgba(165, 191, 215, 0.35);
+}
+
+.card-finaled{
+  background: rgba(159, 204, 46, 0.35);
+}
+
+.card-route{
+  background: #EFEFF0;
+}
+
+.card-canceled{
+  background: #FFD9D9;
+}
+
+.title-card{
+  font-size: 20px;
+}
+
+.card-header-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number-information{
+  display: flex;
+  justify-content: center;
+
+
+  font-size: 40px;
+  font-weight: bold;
+}

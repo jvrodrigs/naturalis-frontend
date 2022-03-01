@@ -1,0 +1,42 @@
+mat-toolbar{
+  background-color: #ffffff;
+}
+
+span {
+  font-size: 15px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.container-header{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.role{
+  margin: 0 5px 0 5px;
+}
+
+.line-vertical{
+  margin: 0 5px 0 5px;
+}
+
+.user {
+  margin: 0 10px 0 5px;
+}
+
+.image-user-avatar{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+hr{
+  color: #C4C4C4;
+  width: 98%;
+}

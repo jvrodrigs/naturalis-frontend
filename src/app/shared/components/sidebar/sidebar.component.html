@@ -1,2 +1,36 @@
-<p>sidebar works!</p>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport = "true">
+      <div class="container-logo">
+        <a routerLink="/">
+          <img class="logo" src="./../../../../assets/naturalis_deff.png" alt="logo">
+        </a>
+      </div>
+      <mat-nav-list class="nav-list">
+          <a class="" mat-list-item routerLinkActive="ativo" routerLink = "/dashboard">
+              <i class="material-icons">
+                  dashboard
+              </i>
+              Dashboard
+          </a>
+          <a class="" routerLinkActive="ativo" mat-list-item routerLink = "/clients">
+            <i class="material-icons">
+                groups
+            </i>
+            Clientes
+          </a>
+          <a class="" routerLinkActive="ativo" mat-list-item routerLink = "/orders">
+            <i class="material-icons">
+                shopping_bag
+            </i>
+            Pedidos
+          </a>
+      </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <app-header></app-header>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

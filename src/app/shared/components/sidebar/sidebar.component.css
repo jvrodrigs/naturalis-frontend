@@ -1,0 +1,37 @@
+.sidenav {
+  background-color: #F7F8FC;
+  width: 243px;
+  border: none;
+}
+
+.nav-list a {
+  color: #595A63;
+  font-size: 15px;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+.nav-list .ativo {
+  border-left: 2px solid #1C743A;
+  color: #1C743A;
+}
+
+.sidenav i {
+  padding-right: 10px;
+}
+
+.content {
+  padding: 30px;
+  background-color: #fff;
+}
+
+.container-logo{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 235px;
+}
