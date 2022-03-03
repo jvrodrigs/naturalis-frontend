@@ -1,27 +1,28 @@
-# NaturalisFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+# Sistema Naturalis (FrontEnd)
 
-## Development server
+Sistema desenvolvido com o proposito de **ESTUDO** pessoal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Motivação
 
-## Code scaffolding
+Sistema foi desenvolvido encima de algumas problemáticas observadas no ambiente de trabalho de um familiar. Onde foi notado os seguintes pontos: 
+- Cadastro de Produtos e Estoque eram feitos em tabelas excel;
+- Cadastro de informações sobre pedidos (denominei como Ordem de Serviço), eram feitas em bloquinhos de notas orçamentarias;
+- Não existia uma base de dados de clientes, onde poderia facilitar em cadastros de novos pedidos;
+- Não sei se existia relátorios, mas creio eu que se tivesse eram uma logistica muito dificil de se fazer;
+- Relátorio de vendas por Autor;
+- Relátorio de entregas/rotas dos Entergadores;
+- Relátorio de vendas por mês e período escolhido;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Finalidade
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Como já dito, sistema foi desenvolvido para estudo pessoal, porém, irei apresentar os seguintes responsáveis, tanto para uma validação de que realmente era isto que estava ou poderia atrasar de alguma forma, como se necessário o desenvolvimento de novas funcionalidades.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+E caso, eles gostem e queiram colocar em produção, poderemos pensar nisso..
 
-## Running end-to-end tests
+### Github do BackEnd
+[Link](https://github.com/jvrodrigs/naturalis-backend)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Algumas telas desenvoldidas..
