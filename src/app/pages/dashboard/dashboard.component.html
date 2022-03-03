@@ -18,7 +18,7 @@
 
 <div class="information-cards">
 
-  <mat-card class="card-orders">
+  <div class="card-boards orders">
     <div class="card-header-info">
       <div class="icon-card">
         <img src="../../../assets/svg/shopping-bag.svg" alt="">
@@ -30,69 +30,93 @@
         </button>
       </div>
     </div>
-    <mat-card-content>
-     <span class="number-information">
-       100
-     </span>
-    </mat-card-content>
-  </mat-card>
+    <div class="card-container-info">
+      <h2>100</h2>
+    </div>
+  </div>
 
-
-  <mat-card class="card-finaled">
+  <div class="card-boards finaled">
     <div class="card-header-info">
       <div class="icon-card">
         <img src="../../../assets/svg/shopping-bag.svg" alt="">
       </div>
-      <div class="title-card">Pedidos</div>
+      <div class="title-card">Finalizados</div>
       <div class="button-card">
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           <img src="../../../assets/svg/more-vert-black.svg" alt="">
         </button>
       </div>
     </div>
-    <mat-card-content>
-     <span class="number-information">
-       100
-     </span>
-    </mat-card-content>
-  </mat-card>
+    <div class="card-container-info">
+      <h2>95</h2>
+    </div>
+  </div>
 
-
-  <mat-card class="card-route">
+  <div class="card-boards route">
     <div class="card-header-info">
       <div class="icon-card">
         <img src="../../../assets/svg/shopping-bag.svg" alt="">
       </div>
-      <div class="title-card">Pedidos</div>
+      <div class="title-card">Em Rota</div>
       <div class="button-card">
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           <img src="../../../assets/svg/more-vert-black.svg" alt="">
         </button>
       </div>
     </div>
-    <mat-card-content>
-     <span class="number-information">
-       100
-     </span>
-    </mat-card-content>
-  </mat-card>
+    <div class="card-container-info">
+      <h2>4</h2>
+    </div>
+  </div>
 
-  <mat-card class="card-canceled">
+  <div class="card-boards canceled">
     <div class="card-header-info">
       <div class="icon-card">
         <img src="../../../assets/svg/shopping-bag.svg" alt="">
       </div>
-      <div class="title-card">Pedidos</div>
+      <div class="title-card">Cancelados</div>
       <div class="button-card">
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           <img src="../../../assets/svg/more-vert-black.svg" alt="">
         </button>
       </div>
     </div>
-    <mat-card-content>
-     <span class="number-information">
-       100
-     </span>
-    </mat-card-content>
-  </mat-card>
+    <div class="card-container-info">
+      <h2>1</h2>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="card-grids">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile class="grid-graph" [colspan]="3" [rowspan]="5">
+      gráfico
+    </mat-grid-tile>
+    <mat-grid-tile class="grid-cards-column" [colspan]="1" [rowspan]="5">
+      <div class="row">
+        <div class="card monthly-income">
+          <div class="container-card">
+            <p>Ganho do Mês</p>
+            <h2>R$ 1.500,00</h2>
+          </div>
+        </div>
+
+        <div class="card month-goal">
+          <div class="container-card">
+            <p>Ganho do Mês</p>
+            <h2>R$ 1.500,00</h2>
+          </div>
+        </div>
+
+        <div class="card goal-percentage">
+          <div class="container-card">
+            <p>Porcentagem da Meta</p>
+            <h2>90%</h2>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

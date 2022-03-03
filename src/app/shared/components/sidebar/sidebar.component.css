@@ -10,9 +10,12 @@
   font-family: 'Rubik', sans-serif;
 }
 
+.mat-drawer-inner-container{
+  overflow-x: hidden;
+}
 
 .nav-list .ativo {
-  border-left: 2px solid #1C743A;
+  border-bottom: 2px solid #1C743A;
   color: #1C743A;
 }
 
