@@ -1,0 +1,62 @@
+table {
+  width: 100%;
+  border-spacing: 0 8px !important;
+  border-radius: 8px;
+  border: 1px solid #DFE0EB;
+}
+
+th {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.info-td {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  line-height: 30px;
+}
+
+.title{
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sub-title {
+  color: #C5C7CD;
+  font-family: 'Mulish', sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.info-status{
+  font-family: 'Mulish', sans-serif;
+  color: #FFFFFF;
+  border-radius: 100px;
+  width: 54px;
+  height: 24px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.ativo{
+  background: #29CC97;
+}
+
+.inativo {
+  background-color: #F12B2C;
+}
+
+.info-actions{
+  display: flex;
+  justify-content: space-between;
+}

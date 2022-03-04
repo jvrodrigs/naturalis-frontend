@@ -1,0 +1,66 @@
+<table mat-table class="mat-elevation-z8" [dataSource] = "clientsInfo">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let row"  style="width: 800px;">
+      <div class="info-td">
+        <span class="title">{{ row.nome }}</span>
+        <span class="sub-title">Alguma coisa aletoria</span>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Tel Column -->
+  <ng-container matColumnDef="telefone">
+    <th mat-header-cell *matHeaderCellDef >Telefone</th>
+    <td mat-cell *matCellDef="let row">
+      <div class="info-td">
+        <span class="title">{{ row.telefone }}</span>
+        <span class="sub-title">{{row.endereco.cidade}}, {{row.endereco.estado}}</span>
+      </div>
+    </td>
+  </ng-container>
+
+   <!-- Date Column -->
+   <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef >Data</th>
+    <td mat-cell *matCellDef="let row">
+      <div class="info-td">
+        <span class="title">{{ row.telefone }}</span>
+        <span class="sub-title">{{row.endereco.cidade}}, {{row.endereco.estado}}</span>
+      </div>
+    </td>
+  </ng-container>
+
+    <!-- Ativo Column -->
+    <ng-container matColumnDef="ativo">
+      <th mat-header-cell *matHeaderCellDef >Ativo</th>
+      <td mat-cell *matCellDef="let row">
+        <div class="info-actions">
+          <div [ngClass]="row.ativo == true ? 'info-status ativo' : 'info-status inativo'">
+            {{ row.ativo ? "ATIV." : "INAT."}}
+          </div>
+          <div class="info-view">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>Editar</span>
+              </button>
+
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Excluir</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
