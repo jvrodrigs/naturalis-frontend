@@ -9,7 +9,8 @@
           class="example-margin"
           [color]="color"
           [checked]="checked"
-          [disabled]="disabled">
+          [disabled]="disabled"
+          (change)="requestIsDayOrders($event)">
         <span>Dia</span>
       </mat-slide-toggle>
     </section>
@@ -31,7 +32,7 @@
       </div>
     </div>
     <div class="card-container-info">
-      <h2>100</h2>
+      <h2 [countUp]="ordersFull" >0</h2>
     </div>
   </div>
 
@@ -48,7 +49,7 @@
       </div>
     </div>
     <div class="card-container-info">
-      <h2>95</h2>
+      <h2 [countUp]="ordersFinalize">0</h2>
     </div>
   </div>
 
@@ -65,7 +66,7 @@
       </div>
     </div>
     <div class="card-container-info">
-      <h2>4</h2>
+      <h2 [countUp]="ordersInRoute">0</h2>
     </div>
   </div>
 
@@ -82,7 +83,7 @@
       </div>
     </div>
     <div class="card-container-info">
-      <h2>1</h2>
+      <h2 [countUp]="ordersCancel"></h2>
     </div>
   </div>
 

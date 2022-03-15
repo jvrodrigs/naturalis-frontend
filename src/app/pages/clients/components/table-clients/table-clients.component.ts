@@ -1,5 +1,6 @@
 import { Clients } from './../../../../core/clients.model';
 import { Component, OnInit } from '@angular/core';
+import { ClientsService } from '../../clients.service';
 
 @Component({
   selector: 'app-table-clients',
@@ -56,11 +57,20 @@ export class TableClientsComponent implements OnInit {
     }
   ];
 
-  displayedColumns = ['nome', 'telefone', 'data','ativo']
+  clientsTeste: Clients [] = []; 
 
-  constructor() { }
+  displayedColumns = ['nome', 'telefone', 'data', 'ativo']
+
+  constructor(private clientHttp: ClientsService) { }
 
   ngOnInit(): void {
+    this.clientHttp.getListClients().subscribe(
+      res => {
+        this.clientsTeste = res;
+        console.log(this.clientsTeste);
+        
+      }
+    )
   }
 
 }

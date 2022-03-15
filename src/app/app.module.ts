@@ -13,6 +13,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CoreModule } from './core/core.module';
+import { ClientsModule } from './pages/clients/clients.module';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CoreModule } from './core/core.module';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    CoreModule
+    CoreModule,
+    ClientsModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

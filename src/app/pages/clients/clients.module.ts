@@ -10,8 +10,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-
 import { HttpClientModule } from '@angular/common/http';
+
 import { TableClientsComponent } from './components/table-clients/table-clients.component';
 
 

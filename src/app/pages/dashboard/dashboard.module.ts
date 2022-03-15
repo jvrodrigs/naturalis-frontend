@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 
+import { CountUpModule } from 'ngx-countup'
+
 @NgModule({
   declarations: [
     DashboardComponent
@@ -21,7 +23,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    CountUpModule
   ]
 })
 export class DashboardModule { }

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;">
-      <img src="../../assets/undraw_Page_not_found_re_e9o6.png" alt="">
+      <img src="../../assets/undraw_Page_not_found_re_e9o6.png" alt="Pagina não encontrada" width="750px">
     </div>
   `,
   styles: [
