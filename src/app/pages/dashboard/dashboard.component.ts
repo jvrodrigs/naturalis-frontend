@@ -20,6 +20,17 @@ export class DashboardComponent implements OnInit {
   ordersFinalize: number = 0;
   ordersInRoute: number = 0;
   ordersCancel: number = 0;
+  orderFullValue: number = 1500;
+  OrderFullValueGoal: number = 15990;
+  OrderPorcentGoal: number = 99;
+
+  countUpCurrency = {
+    prefix: 'R$'
+  }
+
+  countUpPorcent = {
+     suffix: '%',
+  }
 
   constructor(private dashService: DashboardService) { }
 
@@ -31,6 +42,8 @@ export class DashboardComponent implements OnInit {
       }
     )
   }
+
+  
 
   calcInformationsOrdersDash(order: Orders[]){  
     this.ordersFull = order.length;
@@ -53,12 +66,19 @@ export class DashboardComponent implements OnInit {
     }, {
       countFinalize: 0,
       countInRoute: 0,
-      countCancel: 0
+      countCancel: 0,
     })
+    
+    order.forEach(or => {
+      console.log(parseInt(or.valorTotal));
+      
+    })    
 
     this.ordersCancel = countConfig.countCancel;
     this.ordersFinalize = countConfig.countFinalize;
     this.ordersInRoute = countConfig.countInRoute;
+    //console.log(this.orderFullValue);
+    
   }
 
   requestIsDayOrders(event: MatSlideToggleChange){

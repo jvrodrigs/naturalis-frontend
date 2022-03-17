@@ -67,8 +67,6 @@ export class TableClientsComponent implements OnInit {
     this.clientHttp.getListClients().subscribe(
       res => {
         this.clientsTeste = res;
-        console.log(this.clientsTeste);
-        
       }
     )
   }

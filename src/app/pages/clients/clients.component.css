@@ -1,0 +1,18 @@
+.container-client{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+.clients{
+    font-size: 24px;
+    font-family: 'Mulish', sans-serif;
+}
+
+.button-create{
+    background-color: #1C743A;
+    border-radius: 10px;
+    width: 172px;
+    padding: 2px;
+}

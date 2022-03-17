@@ -12,4 +12,8 @@ export class ClientsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createNewClient(){
+    console.log('Novo cliente!')
+  }
+
 }

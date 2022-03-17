@@ -100,21 +100,21 @@
         <div class="card monthly-income">
           <div class="container-card">
             <p>Ganho do Mês</p>
-            <h2>R$ 1.500,00</h2>
+            <h2 [countUp]="orderFullValue" [options]="countUpCurrency"></h2>
           </div>
         </div>
 
         <div class="card month-goal">
           <div class="container-card">
-            <p>Ganho do Mês</p>
-            <h2>R$ 1.500,00</h2>
+            <p>Meta Mensal</p>
+            <h2 [countUp]="OrderFullValueGoal" [options]="countUpCurrency"></h2>
           </div>
         </div>
 
         <div class="card goal-percentage">
           <div class="container-card">
             <p>Porcentagem da Meta</p>
-            <h2>90%</h2>
+            <h2 [countUp]="OrderPorcentGoal" [options]="countUpPorcent"></h2>
           </div>
         </div>
       </div>

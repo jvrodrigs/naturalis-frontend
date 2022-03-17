@@ -1,1 +1,16 @@
-<app-table-clients></app-table-clients>
+<div class="container-client">
+    <div class="ident">
+        <span class="clients">
+            Clientes
+        </span>
+    </div>
+    <div class="create">
+        <button class="button-create" mat-raised-button color="accent" (click)="createNewClient()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon>
+            Cliente
+        </button>
+    </div>
+</div>
+<div class="container">
+    <app-table-clients></app-table-clients>
+</div>
