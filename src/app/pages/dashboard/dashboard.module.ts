@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -25,6 +25,7 @@ import { CountUpModule } from 'ngx-countup'
     MatIconModule,
     MatGridListModule,
     CountUpModule
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class DashboardModule { }

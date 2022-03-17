@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,12 +12,14 @@ export class DashboardService {
 
   URL_API = "http://localhost:8080/orders"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private datePipe: DatePipe) { }
 
-  getListOrders(dataCriacaoDe?: Date): Observable<Orders[]> {
-    console.log(dataCriacaoDe);
-    return this.http.get<Orders[]>(this.URL_API).pipe(
+  getListOrders(dataCriacaoDe: Date, dataCriacaoAte: Date): Observable<Orders[]> {
+    const filter = `dataCriacaoDe=${this.datePipe.transform(dataCriacaoDe, 'dd-MM-yyyy')}&dataCriacaoAte=${this.datePipe.transform(dataCriacaoAte, 'dd-MM-yyyy')}`;
+
+    return this.http.get<Orders[]>(`${this.URL_API}?${filter}`).pipe(
       map((data: Orders[]) => data)
-    )
+    );
   }
 }
