@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Orders } from 'src/app/core/orders.model';
@@ -16,13 +16,15 @@ export class DashboardComponent implements OnInit {
   disabled = false;
   dataOrders: Orders[] = [];
 
+  isLoading: boolean = false;
+
   ordersFull: number = 0;
   ordersFinalize: number = 0;
   ordersInRoute: number = 0;
   ordersCancel: number = 0;
   orderFullValue: number = 0;
   OrderFullValueGoal: number = 0;
-  OrderPorcentGoal: number = 0;
+  OrderPorcentGoal: number = 40;
 
   textFilterInfoPage: string = 'Mês';
   textFilterInfoPagePlus: string = 'Mensal';
@@ -38,19 +40,31 @@ export class DashboardComponent implements OnInit {
     suffix: '%',
   }
 
-  constructor(private dashService: DashboardService) { }
+  constructor(private dashService: DashboardService) {}
 
-  ngOnInit(): void {
-    const {startDay, endDay} = this.createFilterMonth(this.dateFilter);
-
-    this.dashService.getListOrders(startDay, endDay).subscribe(
-      res => {
-        this.dataOrders = res;        
-        this.calcInformationsOrdersDash(this.dataOrders);
-      }
-    )
+  ngOnInit(): void {    
+    this.getOrdersService(this.dateFilter);
   }
 
+  getOrdersService(dateFilter: Date){
+    const {startDay, endDay} = this.createFilterMonth(dateFilter);
+    
+    if (this.checked){
+      this.dashService.getListOrders(dateFilter).subscribe(
+        res => {
+          this.dataOrders = res;        
+          this.calcInformationsOrdersDash(this.dataOrders);
+        },
+      )
+    } else {
+      this.dashService.getListOrders(startDay, endDay).subscribe(
+        res => {
+          this.dataOrders = res;                  
+          this.calcInformationsOrdersDash(this.dataOrders);
+        }
+      )
+    }
+  }
   
   createFilterMonth(date: Date){
     const startDay = new Date(date.getFullYear(), date.getMonth(), 1);
@@ -58,12 +72,7 @@ export class DashboardComponent implements OnInit {
     
     return {startDay, endDay};
   }
-  
-  createFilterDay(date: Date){
-    const day = new Date(date.getFullYear(), date.getMonth(), 1);
-    
-    return day;
-  }
+
 
   calcInformationsOrdersDash(order: Orders[]){      
     this.ordersFull = order.length;
@@ -90,7 +99,11 @@ export class DashboardComponent implements OnInit {
     })
     
     order.forEach(or => {
-      this.orderFullValue += Number(or.valorTotal);
+      if(or.total){
+        this.orderFullValue += Number(or.total);
+      } else {
+        this.orderFullValue = 0;
+      }
     })    
 
     this.ordersCancel = countConfig.countCancel;
@@ -99,9 +112,9 @@ export class DashboardComponent implements OnInit {
   }
 
   requestIsDayOrders(event: MatSlideToggleChange){
-    console.log('Mudando o filter da dashboard!');
-    const day = this.createFilterDay(this.dateFilter);
-    console.log(day);
+    this.checked = event.checked;
+    this.orderFullValue = 0;
+    this.getOrdersService(this.dateFilter);
     if(event.checked){
       this.textFilterInfoPage = 'Dia';
       this.textFilterInfoPagePlus = 'Diário';

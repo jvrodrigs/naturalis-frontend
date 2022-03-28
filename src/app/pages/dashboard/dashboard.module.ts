@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { CountUpModule } from 'ngx-countup'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CountUpModule } from 'ngx-countup'
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    CountUpModule
+    CountUpModule,
+    MatSnackBarModule
   ],
   providers:[DatePipe]
 })

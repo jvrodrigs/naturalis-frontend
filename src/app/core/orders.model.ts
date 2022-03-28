@@ -12,6 +12,6 @@ export interface Orders{
     idResp: string;
     nomeResp: string;
     descricao: string;
-    valorTotal: string;
+    total: string;
     dataCriacao: Date;
 }
