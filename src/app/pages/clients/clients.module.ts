@@ -2,7 +2,6 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientsComponent } from './clients.component';
-import { ClientsReadComponent } from './components/clients-read/clients-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -18,7 +17,6 @@ import { TableClientsComponent } from './components/table-clients/table-clients.
 @NgModule({
   declarations: [
     ClientsComponent,
-    ClientsReadComponent,
     TableClientsComponent
   ],
   imports: [
