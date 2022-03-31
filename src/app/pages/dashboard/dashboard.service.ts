@@ -17,6 +17,7 @@ export class DashboardService {
     private datePipe: DatePipe,
     private snackBar: MatSnackBar) { }
 
+  //TODO: Remember to create a new order request model.
   getListOrders(dataCriacaoDe?: Date, dataCriacaoAte?: Date): Observable<Orders[]> {
     let filter;
     if (dataCriacaoDe && dataCriacaoAte){
@@ -25,7 +26,7 @@ export class DashboardService {
       filter = `dataCriacaoDe=${this.datePipe.transform(dataCriacaoDe, 'dd-MM-yyyy')}&dataCriacaoAte=${this.datePipe.transform(dataCriacaoDe, 'dd-MM-yyyy')}`
     }
     return this.http.get<Orders[]>(`${this.URL_API}?${filter}`).pipe(
-      map((data: Orders[]) => data,
+      map((data: any) => data.content,
       this.showMessage('Informações recebidas com sucesso!')),
       catchError(e =>
         this.errorHandler("Erro ao tentar conectar com o servidor!"))
@@ -34,7 +35,7 @@ export class DashboardService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'x', {
-      duration: 3000,
+      duration: 1000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ['msg-error'] : ['msg-sucess']

@@ -15,3 +15,14 @@ export interface Endereco {
   cidade: string;
   estado: string;
 }
+
+
+export interface RequestClients {
+    content: Clients[],
+    pageable: Record<string, unknown>,
+    totalElements: number,
+    last: boolean,
+    size: number;
+    numberOfElements: number;
+    empty: boolean
+}

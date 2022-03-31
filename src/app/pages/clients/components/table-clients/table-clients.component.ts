@@ -9,55 +9,7 @@ import { ClientsService } from '../../clients.service';
 })
 export class TableClientsComponent implements OnInit {
 
-  clientsInfo: Clients[] = [
-    {
-      id: 1,
-      nome: "João Silva",
-      telefone: "(85) 9 89545050",
-      endereco: {
-        logradouro: "Rua do Abacaxi",
-        numero: "10",
-        bairro: "Brasil",
-        complemento: null,
-        cep: "38.400-12",
-        cidade: "Uberlândia",
-        estado: "MG"
-      },
-      ativo: true
-    },
-    {
-      id: 2,
-      nome: "Silva",
-      telefone: "(85) 9 89545050",
-      endereco: {
-        logradouro: "Rua do Abacaxi",
-        numero: "10",
-        bairro: "Brasil",
-        complemento: null,
-        cep: "38.400-12",
-        cidade: "Uberlândia",
-        estado: "MG"
-      },
-      ativo: false
-    },
-    {
-      id: 3,
-      nome: "João",
-      telefone: "(85) 9 89545050",
-      endereco: {
-        logradouro: "Rua do Abacaxi",
-        numero: "10",
-        bairro: "Brasil",
-        complemento: null,
-        cep: "38.400-12",
-        cidade: "Uberlândia",
-        estado: "MG"
-      },
-      ativo: true
-    }
-  ];
-
-  clientsTeste: Clients [] = []; 
+  clientsTeste: Clients[] = []; 
 
   displayedColumns = ['nome', 'telefone', 'data', 'ativo']
 
@@ -66,7 +18,9 @@ export class TableClientsComponent implements OnInit {
   ngOnInit(): void {
     this.clientHttp.getListClients().subscribe(
       res => {
-        this.clientsTeste = res;
+        console.log(res);
+        
+        this.clientsTeste = res.content;        
       }
     )
   }
