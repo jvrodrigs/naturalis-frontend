@@ -15,8 +15,9 @@ export class ClientsService {
   constructor(private http: HttpClient,
     private snackBar:MatSnackBar) { }
 
-  getListClients(): Observable<RequestClients>{
-    return this.http.get<RequestClients>(this.URL_API).pipe(
+  getListClients(page?: number): Observable<RequestClients>{
+    let url = `${this.URL_API}?${page ? `page=${page}` : ''}`
+    return this.http.get<RequestClients>(url).pipe(
       map((data: RequestClients) => data,
       this.showMessage('Informações recebidas com sucesso!')),
       catchError(e =>

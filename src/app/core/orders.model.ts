@@ -15,3 +15,13 @@ export interface Orders{
     total: string;
     dataCriacao: Date;
 }
+
+export interface RequestOrders {
+    content: Orders[],
+    pageable: Record<string, unknown>,
+    totalElements: number,
+    last: boolean,
+    size: number;
+    numberOfElements: number;
+    empty: boolean
+}

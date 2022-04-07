@@ -21,8 +21,10 @@ export interface RequestClients {
     content: Clients[],
     pageable: Record<string, unknown>,
     totalElements: number,
+    totalPages: number,
     last: boolean,
-    size: number;
-    numberOfElements: number;
+    size: number,
+    number: number,
+    numberOfElements: number,
     empty: boolean
 }
