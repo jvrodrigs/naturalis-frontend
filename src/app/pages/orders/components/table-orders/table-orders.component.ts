@@ -12,7 +12,7 @@ export class TableOrdersComponent implements OnInit {
   ordersList: Orders[] =[];
   request!: RequestOrders;
 
-  displayedColumns = ['cliente', 'telefone', 'endereco', 'responsavel', 'status', 'valor'];
+  displayedColumns = ['ref','data', 'cliente', 'produto', 'telefone', 'responsavel', 'status', 'preco'];
 
   totalPaging = 0;
   actualPaging = 0;
@@ -31,6 +31,7 @@ export class TableOrdersComponent implements OnInit {
         this.ordersList = this.request.content;
         this.actualPaging = this.request.currentPage;
         this.totalPaging = this.request.totalPages;
+        console.log(this.request);
       },
     )
   }

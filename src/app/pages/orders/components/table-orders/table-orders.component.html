@@ -1,6 +1,23 @@
 <table mat-table class="mat-elevation-z8" [dataSource] = "ordersList">
 
-  <!-- Name Column -->
+  <ng-container matColumnDef="ref">
+    <th mat-header-cell *matHeaderCellDef>REF</th>
+    <td mat-cell *matCellDef="let row"  style="width: 800px;">
+      <div class="info-td">
+        <span class="title">{{ row.id }}</span>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef>Data Criação</th>
+    <td mat-cell *matCellDef="let row"  style="width: 800px;">
+      <div class="info-td">
+        <span class="title" matTooltip="{{ row.dataCriado |  date: 'dd/MM/yyyy  h:mm:ss' }}">{{ row.dataCriado |  date: 'dd/MM/yyyy' }}</span>
+      </div>
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="cliente">
     <th mat-header-cell *matHeaderCellDef>Cliente</th>
     <td mat-cell *matCellDef="let row"  style="width: 800px;">
@@ -10,26 +27,27 @@
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="produto">
+    <th mat-header-cell *matHeaderCellDef>Produto</th>
+    <td mat-cell *matCellDef="let row"  style="width: 800px;">
+      <div class="info-td">
+        <span class="title">{{ row.produto.nome }}</span>
+      </div>
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="telefone">
     <th mat-header-cell *matHeaderCellDef>Telefone</th>
     <td mat-cell *matCellDef="let row"  style="width: 800px;">
       <div class="info-td">
         <span class="title">{{ row.cliente.telefone }}</span>
-      </div>
-    </td>
-  </ng-container>
-
-  <ng-container matColumnDef="endereco">
-    <th mat-header-cell *matHeaderCellDef>Bairro</th>
-    <td mat-cell *matCellDef="let row"  style="width: 800px;">
-      <div class="info-td">
-        <span class="title">{{ row.cliente.endereco.bairro }}</span>
+        <span class="sub-title">{{ row.cliente.endereco.bairro }} - {{ row.cliente.endereco.cidade}}</span>
       </div>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="responsavel">
-    <th mat-header-cell *matHeaderCellDef>Responsável</th>
+    <th mat-header-cell *matHeaderCellDef>Entregador</th>
     <td mat-cell *matCellDef="let row"  style="width: 800px;">
       <div class="info-td">
         <span class="title">{{ row.nomeResp }}</span>
@@ -41,12 +59,19 @@
     <th mat-header-cell *matHeaderCellDef>Status</th>
     <td mat-cell *matCellDef="let row"  style="width: 800px;">
       <div class="info-td">
-        <span class="title">{{ row.status.nome }}</span>
+        <div class="container-status">
+          <span [ngClass]="'info-status ' + row.status.nome">
+            {{ row.status.nome }}
+          </span>
+          <!-- <div [ngClass]="row.ativo == true ? 'info-status ativo' : 'info-status inativo'">
+            {{ row.ativo ? "ATIV." : "INAT."}}
+          </div> -->
+        </div>
       </div>
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="valor">
+  <ng-container matColumnDef="preco">
     <th mat-header-cell *matHeaderCellDef>Valor Total</th>
     <td mat-cell *matCellDef="let row"  style="width: 800px;">
       <div class="info-td">

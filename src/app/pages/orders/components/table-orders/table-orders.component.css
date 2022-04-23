@@ -38,8 +38,9 @@ th {
   font-family: 'Mulish', sans-serif;
   color: #FFFFFF;
   border-radius: 100px;
-  width: 54px;
+  width: auto;
   height: 24px;
+  padding: 0 20px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -49,12 +50,28 @@ th {
   font-size: 11px;
 }
 
-.ativo{
-  background: #29CC97;
+.ENTREGUE{
+  background: #1D9C50;
 }
 
-.inativo {
+.CANCELADO {
   background-color: #F12B2C;
+}
+
+.ESPERANDO {
+  background-color: #FEC400;
+}
+
+.EM{
+  background-color: #29CC97;
+}
+
+.SEPARANDO{
+  background-color: #4E42E1;
+}
+
+.container-status{
+  display: flex;
 }
 
 .info-actions{
