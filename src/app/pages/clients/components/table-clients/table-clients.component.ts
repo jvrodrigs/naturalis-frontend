@@ -9,7 +9,7 @@ import { ClientsService } from '../../clients.service';
 })
 export class TableClientsComponent implements OnInit {
 
-  clientsTeste: Clients[] = []; 
+  clientsList: Clients[] = [];
 
   displayedColumns = ['nome', 'telefone', 'data', 'ativo']
 
@@ -26,11 +26,11 @@ export class TableClientsComponent implements OnInit {
 
   requestHttp(page?: number){
     this.clientHttp.getListClients(page).subscribe(
-      res => {        
-        this.clientsTeste = res.content;
+      res => {
+        this.clientsList = res.content;
         this.request = res;
         this.totalPaging = res.totalPages;
-        this.actualPaging = res.number;        
+        this.actualPaging = res.number;
       }
     )
   }
@@ -39,7 +39,7 @@ export class TableClientsComponent implements OnInit {
     return new Array(i);
   }
 
-  onClickPagination(i: number){    
+  onClickPagination(i: number){
     this.actualPaging = i;
     this.requestHttp(i)
   }

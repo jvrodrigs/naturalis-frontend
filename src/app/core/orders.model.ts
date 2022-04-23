@@ -19,9 +19,7 @@ export interface Orders{
 export interface RequestOrders {
     content: Orders[],
     pageable: Record<string, unknown>,
-    totalElements: number,
-    last: boolean,
-    size: number;
-    numberOfElements: number;
-    empty: boolean
+    totalItems: number;
+    currentPage: number;
+    totalPages: number;
 }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { Orders } from 'src/app/core/orders.model';
+import { Orders, RequestOrders } from 'src/app/core/orders.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +17,9 @@ export class OrderService {
     private datePipe: DatePipe,
     private snackBar: MatSnackBar) { }
 
-  getListOrders(): Observable<Orders[]> {
-    return this.http.get<Orders[]>(`${this.URL_API}`).pipe(
-      map((data: Orders[]) => data,
+  getListOrders(): Observable<RequestOrders> {
+    return this.http.get<RequestOrders>(`${this.URL_API}/filter`).pipe(
+      map((data: RequestOrders) => data,
       this.showMessage('Informações recebidas com sucesso!')),
       catchError(e =>
         this.errorHandler("Erro ao tentar conectar com o servidor!"))
